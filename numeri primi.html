@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+    <title>Stampare i nuemri primi tra 1 e 10000</title>
+</head>
+<body>
+    <h1>NUmeri Primi</h1>
+
+    <button id="miobottone" onclick="stampaNumeriPrimi();" >Genera Numeri primi</button>
+    <script>
+        function stampaNumeriPrimi() {
+            for(let i=1;i<=10000;i++)
+            {
+                if (IsPrime(i))
+                {
+                document.write("<span>"+i+"* </span> <br>");
+            }
+            else
+            { document.write("<span>"+i+" </span> <br>");
+        }
+            }
+        }
+
+
+        function IsPrime(n) {
+            let bOut=true;
+            for(fattore=2;(fattore<=n/2);fattore++)
+            {
+                if (n%fattore==0)
+                {
+                    bOut=false
+                }
+            }
+            return bOut
+        }
+    </script>
+</body>
