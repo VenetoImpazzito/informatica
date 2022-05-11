@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito in serie dei resistori</title>
+</head>
+<body>
+    <input id="V" type="text">Voltaggio batteria<br></br>
+    <input id ="I" type="text">Amperaggio Batteria<br></br>
+    <input id ="r1" type="text">Resistenza 1 ohm<br></br>
+    <input id ="r2" type="text">Resistenza 2 ohm<br></br>
+    <input id ="r3" type="text">Resistenza 3 ohm<br></br>
+<button  onclick="calcolaRtot();"> Calcola la R totale</button>
+<button onclick="Calcolav1v2v3();"> Calcola le V1 V2 V3</button>
+<button onclick="FormuaDelCircuito();"> Scrivi la formula del circuito equivalente</button>
+ <p>Risultati:</p>
+ <p id="outrtot">....</p>
+ <p id="outV1">....</p>
+ <p id="outV2">....</p>
+ <p id="outV3">....</p>
+ <p id="outFormula">....</p>
+
+<script>
+function calcolaRtot() {
+     let r1=0,r2=0,r3=0;
+     let rtot=0;
+     r1=parseInt(document.getElementById("r1").value);
+     r2=parseInt(document.getElementById("r2").value);
+     r3=parseInt(document.getElementById("r3").value);
+     rtot=r1+r2+r3;
+     document.getElementById("outrtot").innerHTML="R totale="+rtot;
+}
+function Calcolav1v2v3() {
+    let r1=0,r2=0,r3=0;
+    let I=0,V=0;
+    r1=parseInt(document.getElementById("r1").value);
+    r2=parseInt(document.getElementById("r2").value);
+    r3=parseInt(document.getElementById("r3").value);
+   
+    I=parseInt(document.getElementById("I").value);
+    V=parseInt(document.getElementById("V").value);
+    V1=I*r1
+    V2=I*r2
+    V3=I*r3
+    document.getElementById("outV1").innerHTML="v1 Totale="+V1;
+    document.getElementById("outV2").innerHTML="v2 Totale="+V2;
+    document.getElementById("outV3").innerHTML="v3 Totale="+V3;
+    // segueno le formule
+
+    // segue la stampa
+}
+function FormuaDelCircuito() {
+    document.getElementById("outFormula").innerHTML="V=R*I, R=V/I, I=V/R";
+}
+</script>
